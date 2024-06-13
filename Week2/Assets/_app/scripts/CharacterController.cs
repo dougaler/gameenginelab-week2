@@ -46,6 +46,10 @@ namespace _app.scripts
             }
 
             PlayerMovement();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameManager.instance.playerScore++;
+            }
         }
 
         private void PlayerJump()

@@ -9,7 +9,14 @@ namespace _app.scripts
         {
             if (other.transform.name == "sphere")
             {
-                Debug.Log(other.transform.name + " Entered Trigger");
+                if (AudioManager.instance != null)
+                {
+                    AudioManager.instance.PlayAudio();
+                }
+                else
+                {
+                    Debug.Log(other.transform.name + " Entered Trigger");    
+                }
             }
         }
 
@@ -20,7 +27,14 @@ namespace _app.scripts
 
         public void OnCollisionEnter(Collision other)
         {
-            Debug.Log(" Collided with object");
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.PlayAudio();
+            }
+            else
+            {
+                Debug.Log(" Collided with object");   
+            }
         }
         public void OnCollisionExit(Collision other)
         {
